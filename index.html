@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | Premium Movie Recommendations</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="bg-gradient-1"></div>
+    <div class="bg-gradient-2"></div>
+    <div class="noise-overlay"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-film"></i> CineMatch
+        </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="search-input" placeholder="Search for movies...">
+        </div>
+        <div class="nav-links">
+            <a href="#" id="discover-nav" class="active">Discover</a>
+            <a href="#" id="my-list-nav">My List (<span id="list-count">0</span>)</a>
+            <div class="user-avatar" id="profile-btn">
+                <img src="https://i.pravatar.cc/100?img=33" alt="User">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero works for top trending -->
+        <section class="hero-section" id="hero-section">
+            <div class="hero-content glass-panel">
+                <span class="badge">Trending Now</span>
+                <h1 id="hero-title">Neon Drift: Cyber City</h1>
+                <p class="hero-desc" id="hero-desc">In a dystopian future, a rogue racer must navigate the neon-lit streets to uncover a sprawling corporate conspiracy.</p>
+                <div class="hero-meta">
+                    <span><i class="fa-solid fa-star"></i> 4.8</span>
+                    <span><i class="fa-solid fa-calendar"></i> 2026</span>
+                    <span><i class="fa-solid fa-clock"></i> 2h 15m</span>
+                </div>
+                <div class="hero-actions">
+                    <button class="primary-btn" id="hero-watch-btn"><i class="fa-solid fa-play"></i> Watch Trailer</button>
+                    <button class="secondary-btn" id="hero-add-btn" data-id="1"><i class="fa-solid fa-plus"></i> Add to List</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section" id="filters-section">
+            <h2 id="section-title">Discover by Genre</h2>
+            <div class="filter-chips" id="filter-container">
+                <button class="chip active" data-filter="All">All</button>
+                <button class="chip" data-filter="Action">Action</button>
+                <button class="chip" data-filter="Sci-Fi">Sci-Fi</button>
+                <button class="chip" data-filter="Comedy">Comedy</button>
+                <button class="chip" data-filter="Horror">Horror</button>
+                <button class="chip" data-filter="Drama">Drama</button>
+                <button class="chip" data-filter="Romance">Romance</button>
+            </div>
+        </section>
+
+        <section class="movies-grid" id="movies-container">
+            <!-- Movies will be rendered here dynamically -->
+        </section>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="video-container">
+                <iframe id="trailer-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
